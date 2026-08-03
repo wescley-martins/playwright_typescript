@@ -1,4 +1,4 @@
-#_Single Responsibility Principle_
+# _Single Responsibility Principle_
 
 **Definition**
 
