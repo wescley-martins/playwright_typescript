@@ -13,10 +13,22 @@ Each page contains its locators and methods, while the test focuses only on the 
 
 As a result its improves readability reduces code duplication and makes maintenance easier when the UI changes.
 
-```diff
-  def escopo_existente():
-      pass
 
-+ # Esta linha acabou de ser digitada
-+ novo_codigo = "Digitando..."
+**Example**
+
+```typescript
+export class LoginPage {
+
+    readonly page: Page
+    readonly email: Locator
+    readonly password: Locator
+    readonly enterButton: Locator
+
+    constructor(page: Page) {
+        this.page = page
+        this.email = page.locator('#email')
+        this.password = page.locator("#senha")
+        this.enterButton = page.locator('css=button >> text=Entrar')
+    }
+}
 ```
