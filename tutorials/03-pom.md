@@ -11,7 +11,7 @@ Each page contains its locators and methods, while the test focuses only on the 
 
 **Result**
 
-As a result its improves readability reduces code duplication and makes maintenance easier when the UI changes.
+As a result its improves readability, reduces code duplication and makes maintenance easier when the UI changes.
 
 
 **Example**
