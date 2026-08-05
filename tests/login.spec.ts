@@ -1,5 +1,5 @@
 import { expect, test } from '@playwright/test'
-import { LoginPage } from '../pages/loginPage'
+import { LoginPage } from './support/pages/loginPage'
 
 
 test.only('Successfully logs in', async ({ page }) => {

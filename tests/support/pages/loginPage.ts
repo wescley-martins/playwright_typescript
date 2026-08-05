@@ -15,7 +15,7 @@ export class LoginPage {
     }
 
     async login() {
-        await this.page.goto('https://seubarriga.wcaquino.me/login')
+        await this.page.goto('/')
         await this.email.fill('wescleymartins02@outlook.com')
         await this.password.fill('1234@')
         await this.loginButton.click()
@@ -23,3 +23,4 @@ export class LoginPage {
     }
 
 }
+
