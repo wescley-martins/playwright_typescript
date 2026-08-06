@@ -20,7 +20,7 @@ Run the command below to install **dotenv**:
     yarn add -D dotenv
 ```
 
-## URL_BASE
+## BASE_URL
 
 1. Create a .env file:
 
