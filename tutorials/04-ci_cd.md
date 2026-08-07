@@ -17,6 +17,7 @@ By integrating Playwright with GitHub Actions, the team received immediate feedb
 **Requirements**
 
 **The project should have environment variables configured using dotenv.**
+[For more information, see the](https://github.com/wescley-martins/playwright_typescript/blob/main/tutorials/05-test_data.md)
 
 1. In GitHub Actions, go to **Settings** tab, and select **Secrets**.
 2. Add the following environment variables:
