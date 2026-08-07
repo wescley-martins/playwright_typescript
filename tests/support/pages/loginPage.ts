@@ -1,5 +1,6 @@
 import { Locator, Page } from '@playwright/test'
 import dotenv from 'dotenv'
+import { LoginModel } from '../../models/login.model'
 
 dotenv.config({ path: './.env' })
 
@@ -18,9 +19,15 @@ export class LoginPage {
     }
 
     async login() {
+
+        const loginModel: LoginModel = {
+            email: process.env.USER_EMAIL!,
+            password: process.env.USER_PASSWORD!
+        }
+
         await this.page.goto('/')
-        await this.email.fill(process.env.USER_EMAIL!)
-        await this.password.fill(process.env.USER_PASSWORD!)
+        await this.email.fill(loginModel.email)
+        await this.password.fill(loginModel.password)
         await this.loginButton.click()
     }
 }

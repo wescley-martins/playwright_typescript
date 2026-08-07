@@ -1,9 +1,10 @@
-import { expect, test } from '@playwright/test'
-import { LoginPage } from './support/pages/loginPage'
+import { expect } from '@playwright/test'
+import { test } from './fixtures/auth.fixture'
 
 
-test('Successfully logs in', async ({ page }) => {
-    const loginPage: LoginPage = new LoginPage(page)
-    await loginPage.login()
+test('Successfully logs in', async ({ page, authenticatedLogin }) => {
+    //const loginPage: LoginPage = new LoginPage(page)
+    //await loginPage.login()
+    authenticatedLogin
     await expect(page).toHaveTitle('Seu Barriga - Home')
 })
