@@ -11,3 +11,20 @@ I integrated Playwright with GitHub Actions. Whenever code is pushed to the repo
 **Result**
 
 By integrating Playwright with GitHub Actions, the team received immediate feedback on every code change. Automated test execution reduced manual effort, caught defects earlier, generated reusable test reports, and increased confidence in the release process by validating application quality before deployment.
+
+## GitHub Actions Configuration
+
+**Requirements**
+
+**The project should have environment variables configured using dotenv.**
+
+1. In GitHub Actions, go to **Settings** tab, and select **Secrets**.
+2. Add the following environment variables:
+
+```sh
+    BASE_URL
+    USER_EMAIL
+    USER_PASSWORD
+```
+
+3. After that, whenever code is pushed to the repository, the pipeline will automatically execute the test suite.
