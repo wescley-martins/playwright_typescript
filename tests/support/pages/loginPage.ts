@@ -22,12 +22,12 @@ export class LoginPage {
 
         const loginModel: LoginModel = {
             email: process.env.USER_EMAIL!,
-            password: process.env.USER_PASSWORD!
+            senha: process.env.USER_PASSWORD!
         }
 
         await this.page.goto('/')
         await this.email.fill(loginModel.email)
-        await this.password.fill(loginModel.password)
+        await this.password.fill(loginModel.senha)
         await this.loginButton.click()
     }
 }
