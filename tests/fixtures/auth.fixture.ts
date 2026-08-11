@@ -3,13 +3,12 @@ import { LoginPage } from '../support/pages/loginPage'
 
 
 type authFixture = {
-    authenticatedLogin: Page
+    authenticatedLogin: LoginPage
 }
 
 export const test = base.extend<authFixture>({
     authenticatedLogin: async ({ page }, use) => {
         const loginPage = new LoginPage(page)
-        await loginPage.login()
-        await use(page)
+        await use(loginPage)
     }
 })
