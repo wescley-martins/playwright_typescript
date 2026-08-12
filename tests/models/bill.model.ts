@@ -1,3 +1,3 @@
 export interface BillModel {
-    name: string
+    nome: string
 }

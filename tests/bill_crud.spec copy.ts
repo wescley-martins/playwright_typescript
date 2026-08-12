@@ -1,4 +1,4 @@
-import { expect, test } from "@playwright/test";
+/*import { expect, test } from "@playwright/test";
 import { LoginPage } from "./support/pages/loginPage";
 import { NavBar } from "./support/pages/components/navBar";
 import { BillPage } from "./support/pages/billPage";
@@ -16,4 +16,4 @@ test.describe('Bill CRUD operations', () => {
         await expect(billPage.successAlert).toHaveText('Conta adicionada com sucesso!')
         await deleteBill(request, 'Teste')
     })
-})
+})*/

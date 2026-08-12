@@ -16,4 +16,9 @@ export class NavBar {
         await this.billDropdown.click()
         await this.addBillOption.click()
     }
+
+    async listBill() {
+        await this.billDropdown.click()
+        await this.listBillOption.click()
+    }
 }

@@ -59,10 +59,10 @@ export async function deleteBill(request: APIRequestContext, billName: string) {
 export async function createBills(request: APIRequestContext, billName: string) {
     const token = await getToken(request)
     const bill: BillModel = {
-        name: billName
+        nome: billName
     } 
 
-    const target = await request.post(process.env.BASE_REST_URL!.concat('/contas'), {
+    const target = await request.post(process.env.BASE_REST_URL!.concat('/contas/'), {
         data: bill,
 
         headers: {
