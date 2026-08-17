@@ -7,5 +7,5 @@ setup('Authenticated User', async({ loginPage, alert, page }) => {
     await page.goto(process.env.BASE_URL!)
     await loginPage.login()
     await expect(alert.alert).toHaveText('Bem vindo, Wescley!')
-    await page.context().storageState({ path: 'playwright/.auth/storeState.json'})
+    await page.context().storageState({ path: 'playwright/.auth/storageState.json'})
 })
