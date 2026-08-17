@@ -4,10 +4,12 @@ import { NavBar } from '../support/pages/components/navBar'
 import { BillPage } from '../support/pages/billPage'
 import { faker } from '@faker-js/faker'
 import { deleteBill, createBills } from '../support/helpers/helpers'
+import { Alert } from '../support/pages/components/alert'
 
 type testFixtures = {
     loginPage: LoginPage
     navBar: NavBar
+    alert: Alert
     billPage: BillPage
     billName: string
     updatedBillName: string
@@ -24,6 +26,10 @@ export const test = base.extend<testFixtures>({
 
     navBar: async ({ page }, use) => {
         await use(new NavBar(page))
+    },
+
+    alert: async ({ page }, use) => {
+        await use(new Alert(page))
     },
 
     billPage: async ({ page }, use) => {
