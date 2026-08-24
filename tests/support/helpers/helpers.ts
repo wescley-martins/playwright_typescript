@@ -37,7 +37,7 @@ async function findBillIdName(request: APIRequestContext, billName: string) {
     let billId;
 
     for (const data of bills) {
-        if (data.nome == billName){
+        if (data.nome == billName) {
             billId = data.id
         }
     }
@@ -60,7 +60,7 @@ export async function createBills(request: APIRequestContext, billName: string) 
     const token = await getToken(request)
     const bill: BillModel = {
         nome: billName
-    } 
+    }
 
     const target = await request.post(process.env.BASE_REST_URL!.concat('/contas/'), {
         data: bill,
@@ -71,4 +71,45 @@ export async function createBills(request: APIRequestContext, billName: string) 
     })
 
     expect(target.status()).toBe(201)
+}
+
+//Transactions
+async function getTransaction(request: APIRequestContext) {
+    const token = await getToken(request)
+
+    const getTransactions = await request.get(process.env.BASE_REST_URL!.concat('/transacoes'), {
+        headers: {
+            Authorization: `JWT ${token}`
+        }
+    })
+
+    const transactions = JSON.parse(await getTransactions.text())
+    return transactions
+}
+
+async function findTransactionIdByDescription(request: APIRequestContext, transactionDescription: string) {
+    const transactions = await getTransaction(request)
+    let transactionId
+
+    for (const data of transactions) {
+        if (data.descricao == transactionDescription) {
+            transactionId = data.id
+        }
+    }
+
+    console.log('Id da transação criada ' + transactionId)
+    console.log('Descrição da transação criada ' + transactionDescription)
+
+    return transactionId
+}
+
+export async function deleteTransaction(request: APIRequestContext, transactionDescription: string) {
+    const token = await getToken(request)
+    const transactionId = await findTransactionIdByDescription(request, transactionDescription)
+
+    const target = await request.delete(process.env.BASE_REST_URL!.concat(`/transacoes/${transactionId}`), {
+        headers: {
+            Authorization: `JWT ${token}`
+        }
+    })
 }
