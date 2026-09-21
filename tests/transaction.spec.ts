@@ -1,4 +1,4 @@
-import { expect, test } from "./fixtures/test.fixture";
+import { expect, test } from "./fixtures/index";
 import { validTransaction, transactionValidateRules } from "./data/transactionData";
 
 test.describe('Transaction Operations', () => {

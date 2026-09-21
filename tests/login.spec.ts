@@ -1,5 +1,4 @@
-import { expect } from '@playwright/test'
-import { test } from './fixtures/test.fixture'
+import { test, expect } from './fixtures/index'
 
 test.use({
     storageState: { cookies: [], origins: [] } 

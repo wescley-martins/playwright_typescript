@@ -1,4 +1,4 @@
-import { test as setup, expect} from './fixtures/test.fixture'
+import { test as setup, expect} from './fixtures/index'
 import dotenv from 'dotenv'
 
 dotenv.config({ path: './.env' })

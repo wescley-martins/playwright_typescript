@@ -1,4 +1,4 @@
-import { test, expect } from './fixtures/test.fixture'
+import { test, expect } from './fixtures/index'
 
 test.describe('Bill CRUD Operations', () => {
 

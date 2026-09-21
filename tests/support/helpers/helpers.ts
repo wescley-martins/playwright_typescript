@@ -45,7 +45,7 @@ async function findBillIdName(request: APIRequestContext, billName: string) {
     return billId;
 }
 
-export async function deleteBill(request: APIRequestContext, billName: string) {
+export async function deleteBillByName(request: APIRequestContext, billName: string) {
     const token = await getToken(request)
     const billId = await findBillIdName(request, billName)
 
@@ -56,7 +56,7 @@ export async function deleteBill(request: APIRequestContext, billName: string) {
     })
 }
 
-export async function createBills(request: APIRequestContext, billName: string) {
+export async function createBill(request: APIRequestContext, billName: string) {
     const token = await getToken(request)
     const bill: BillModel = {
         nome: billName

@@ -8,10 +8,10 @@ export class NavBar {
     readonly createTransactions: Locator
 
     constructor(page: Page) {
-        this.billDropdown = page.locator('a', { hasText: 'Contas' })
-        this.addBillOption = page.locator('a', { hasText: 'Adicionar' })
-        this.listBillOption = page.locator('a', { hasText: 'Listar' })
-        this.createTransactions = page.locator('a', { hasText: 'Criar Movimentação' })
+        this.billDropdown = page.getByRole('button', { name: 'Contas' })
+        this.addBillOption = page.getByRole('link', { name: 'Adicionar' })
+        this.listBillOption = page.getByRole('link', { name: 'Listar' })
+        this.createTransactions = page.getByRole('link', { name: 'Criar Movimentação' })
     }
 
     async addBill() {
