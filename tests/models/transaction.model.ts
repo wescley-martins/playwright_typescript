@@ -1,9 +1,10 @@
 export interface TransactionModel {
-    transactionType: string
-    transacttionDate: string
-    paymentDate: string
-    description: string
-    interested: string
-    amount: string
+    tipo: string
+    data_transacao: string
+    data_pagamento: string
+    descricao: string
+    interessado: string
+    conta: string
+    valor: string
     status: string
 }

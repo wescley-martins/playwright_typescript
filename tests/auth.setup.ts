@@ -1,3 +1,4 @@
+import { writeFile } from 'fs/promises';
 import { test as setup, expect} from './fixtures/index'
 import dotenv from 'dotenv'
 

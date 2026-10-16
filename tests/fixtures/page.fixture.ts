@@ -4,6 +4,7 @@ import { NavBar } from '../support/pages/components/navBar'
 import { Alert } from '../support/pages/components/alert'
 import { BillPage } from '../support/pages/billPage'
 import { TransactionsPage } from '../support/pages/transactionsPage'
+import { MonthlyReportPage } from '../support/pages/monthlyReportPage'
 
 type PageFixtures = {
     loginPage: LoginPage
@@ -11,6 +12,7 @@ type PageFixtures = {
     alert: Alert
     billPage: BillPage
     transactionPage: TransactionsPage
+    monthlyReportPage: MonthlyReportPage
 }
 
 export const pageFixture = base.extend<PageFixtures>({
@@ -32,5 +34,9 @@ export const pageFixture = base.extend<PageFixtures>({
 
     transactionPage: async ({ page }, use) => {
         await use(new TransactionsPage(page))
+    },
+
+    monthlyReportPage: async ({ page }, use) => {
+        await use(new MonthlyReportPage(page))
     }
 });

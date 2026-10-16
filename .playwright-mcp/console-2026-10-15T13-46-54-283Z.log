@@ -1,0 +1,2 @@
+[     875ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o @ https://seubarriga.wcaquino.me/login:0
+[    1019ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ https://seubarriga.wcaquino.me/favicon.ico:0

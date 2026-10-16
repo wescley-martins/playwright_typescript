@@ -16,7 +16,7 @@ test.describe('Transaction Operations', () => {
     }
 
     for (const data of validTransaction) {
-        test(`Should create a valid ${data.transactionType} transaction`, async ({ navBar, transactionPage, transactionDescription, alert, deleteTransaction }) => {
+        test(`Should create a valid ${data.tipo} transaction`, async ({ navBar, transactionPage, transactionDescription, alert, deleteTransaction }) => {
             await navBar.createTransactions.click()
             await transactionPage.createTransaction(data, transactionDescription)
             await expect(alert.alert).toHaveText('Movimentação adicionada com sucesso!')

@@ -2,6 +2,8 @@ import { APIRequestContext, expect } from "@playwright/test";
 import { LoginModel } from "../../models/login.model";
 import dotenv from 'dotenv'
 import { BillModel } from "../../models/bill.model";
+import { TransactionModel } from "../../models/transaction.model";
+import { transactions } from "../../data/monthlyReportData";
 
 dotenv.config({ path: './.env' })
 
@@ -96,11 +98,22 @@ async function findTransactionIdByDescription(request: APIRequestContext, transa
             transactionId = data.id
         }
     }
-
-    console.log('Id da transação criada ' + transactionId)
-    console.log('Descrição da transação criada ' + transactionDescription)
-
     return transactionId
+}
+
+export async function createTransaction(request: APIRequestContext, transaction: TransactionModel) {
+    const token = await getToken(request)
+
+    const target = await request.post(`${process.env.BASE_URL!}/salvarMovimentacao`, {
+        form: Object.fromEntries(
+            Object.entries(transaction)
+        ),
+        headers: {
+            Authorization: `JWT ${token}`
+        }
+    })
+
+    expect(target.status()).toBe(200)
 }
 
 export async function deleteTransaction(request: APIRequestContext, transactionDescription: string) {

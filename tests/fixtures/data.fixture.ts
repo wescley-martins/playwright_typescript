@@ -1,6 +1,8 @@
 import { test as base } from '@playwright/test'
 import { faker } from '@faker-js/faker'
-import { deleteBillByName, createBill, deleteTransaction } from '../support/helpers/helpers'
+import { deleteBillByName, createBill, deleteTransaction, createTransaction } from '../support/helpers/helpers'
+import { TransactionModel } from '../models/transaction.model'
+import { transactions } from '../data/monthlyReportData'
 
 type DataFixtures = {
     billName: string
@@ -9,6 +11,7 @@ type DataFixtures = {
     deleteBillByName: void
     createBill: void
     deleteTransaction: void
+    createTransaction: void
     deleteUpdatedBill: void
 }
 
@@ -40,6 +43,15 @@ export const dataFixture = base.extend<DataFixtures>({
 
     createBill: async({ request, billName}, use) => {
         await createBill(request, billName);
+        await use();
+    },
+
+    createTransaction: async ({ request, transactionDescription }, use) => {
+        const transaction: TransactionModel = {
+            ...transactions,
+            descricao: transactionDescription
+        }
+        await createTransaction(request, transaction);
         await use();
     },
 

@@ -1,0 +1,98 @@
+- generic [active] [ref=f2e1]:
+  - navigation [ref=f2e2]:
+    - generic [ref=f2e3]:
+      - link "Seu Barriga" [ref=f2e5] [cursor=pointer]:
+        - /url: /
+      - list [ref=f2e7]:
+        - listitem [ref=f2e8]:
+          - link "Home" [ref=f2e9] [cursor=pointer]:
+            - /url: /
+        - listitem [ref=f2e10]:
+          - button "Contas" [ref=f2e11] [cursor=pointer]
+        - listitem [ref=f2e13]:
+          - link "Criar Movimentação" [ref=f2e14] [cursor=pointer]:
+            - /url: /movimentacao
+        - listitem [ref=f2e15]:
+          - link "Resumo Mensal" [ref=f2e16] [cursor=pointer]:
+            - /url: /extrato
+        - listitem [ref=f2e17]:
+          - link "Sair" [ref=f2e18] [cursor=pointer]:
+            - /url: /logout
+  - generic [ref=f2e20]:
+    - generic [ref=f2e21]:
+      - combobox [ref=f2e23]:
+        - option "Janeiro"
+        - option "Fevereiro"
+        - option "Março"
+        - option "Abril"
+        - option "Maio"
+        - option "Junho"
+        - option "Julho"
+        - option "Agosto"
+        - option "Setembro"
+        - option "Outubro" [selected]
+        - option "Novembro"
+        - option "Dezembro"
+      - combobox [ref=f2e25]:
+        - option "2010"
+        - option "2011"
+        - option "2012"
+        - option "2013"
+        - option "2014"
+        - option "2015"
+        - option "2016"
+        - option "2017"
+        - option "2018"
+        - option "2019"
+        - option "2020"
+        - option "2021"
+        - option "2022"
+        - option "2023"
+        - option "2024"
+        - option "2025"
+        - option "2026" [selected]
+        - option "2027"
+        - option "2028"
+        - option "2029"
+        - option "2030"
+      - button "Buscar" [ref=f2e26] [cursor=pointer]
+    - table [ref=f2e27]:
+      - rowgroup [ref=f2e28]:
+        - row [ref=f2e29]:
+          - columnheader "Descrição" [ref=f2e30]
+          - columnheader "Dt Pagamento" [ref=f2e31]
+          - columnheader "Conta" [ref=f2e32]
+          - columnheader "Valor" [ref=f2e33]
+          - columnheader "Situação" [ref=f2e34]
+          - columnheader "Ações" [ref=f2e35]
+      - rowgroup [ref=f2e36]:
+        - row [ref=f2e37]:
+          - cell "Teste" [ref=f2e38]
+          - cell "10/10/2026" [ref=f2e39]
+          - cell "Transaction validate rules" [ref=f2e40]
+          - cell "1000.00" [ref=f2e41]
+          - cell "Pago" [ref=f2e42]
+          - cell [ref=f2e43]:
+            - link [ref=f2e44] [cursor=pointer]:
+              - /url: /removerMovimentacao?id=2469049
+              - generic [aria-hidden] [ref=f2e45]: 
+        - row [ref=f2e46]:
+          - cell "Teste" [ref=f2e47]
+          - cell "15/10/2026" [ref=f2e48]
+          - cell "Teste" [ref=f2e49]
+          - cell "3000.00" [ref=f2e50]
+          - cell "Pendente" [ref=f2e51]
+          - cell [ref=f2e52]:
+            - link [ref=f2e53] [cursor=pointer]:
+              - /url: /removerMovimentacao?id=2473785
+              - generic [aria-hidden] [ref=f2e54]: 
+        - row [ref=f2e55]:
+          - cell "Teste" [ref=f2e56]
+          - cell "15/10/2026" [ref=f2e57]
+          - cell "Teste" [ref=f2e58]
+          - cell "3000.00" [ref=f2e59]
+          - cell "Pendente" [ref=f2e60]
+          - cell [ref=f2e61]:
+            - link [ref=f2e62] [cursor=pointer]:
+              - /url: /removerMovimentacao?id=2473786
+              - generic [aria-hidden] [ref=f2e63]: 

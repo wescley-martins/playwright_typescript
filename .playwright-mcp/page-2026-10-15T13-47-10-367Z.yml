@@ -1,0 +1,36 @@
+- generic [active] [ref=f1e1]:
+  - navigation [ref=f1e2]:
+    - generic [ref=f1e3]:
+      - link "Seu Barriga" [ref=f1e5] [cursor=pointer]:
+        - /url: /
+      - list [ref=f1e7]:
+        - listitem [ref=f1e8]:
+          - link "Home" [ref=f1e9] [cursor=pointer]:
+            - /url: /
+        - listitem [ref=f1e10]:
+          - button "Contas" [ref=f1e11] [cursor=pointer]
+        - listitem [ref=f1e13]:
+          - link "Criar Movimentação" [ref=f1e14] [cursor=pointer]:
+            - /url: /movimentacao
+        - listitem [ref=f1e15]:
+          - link "Resumo Mensal" [ref=f1e16] [cursor=pointer]:
+            - /url: /extrato
+        - listitem [ref=f1e17]:
+          - link "Sair" [ref=f1e18] [cursor=pointer]:
+            - /url: /logout
+  - alert [ref=f1e19]: Bem vindo, Wescley!
+  - table [ref=f1e22]:
+    - rowgroup [ref=f1e23]:
+      - row [ref=f1e24]:
+        - columnheader "Conta" [ref=f1e25]
+        - columnheader "Saldo" [ref=f1e26]
+    - rowgroup [ref=f1e27]:
+      - row [ref=f1e28]:
+        - cell "Transaction validate rules" [ref=f1e29]
+        - cell "6000.00" [ref=f1e30]
+  - separator [ref=f1e31]
+  - contentinfo [ref=f1e32]:
+    - generic [ref=f1e33]:
+      - text: Seu Barriga. Nunca mais esqueça de pagar o aluguel.
+      - link "reset" [ref=f1e34] [cursor=pointer]:
+        - /url: /reset

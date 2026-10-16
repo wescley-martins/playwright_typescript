@@ -30,25 +30,25 @@ export class TransactionsPage {
     }
 
     async createTransactionForValidateRules(transactionModel: TransactionModel) {
-        await this.transactionDropdown.selectOption(transactionModel.transactionType)
-        await this.transactionDateField.fill(transactionModel.transacttionDate)
-        await this.paymentdateField.fill(transactionModel.paymentDate)
-        await this.descriptionField.fill(transactionModel.description)
-        await this.InterestedField.fill(transactionModel.interested)
-        await this.amountField.fill(transactionModel.amount)
-        await this.accountDropdown.selectOption('Transaction validate rules')
+        await this.transactionDropdown.selectOption(transactionModel.tipo)
+        await this.transactionDateField.fill(transactionModel.data_transacao)
+        await this.paymentdateField.fill(transactionModel.data_pagamento)
+        await this.descriptionField.fill(transactionModel.descricao)
+        await this.InterestedField.fill(transactionModel.interessado)
+        await this.amountField.fill(transactionModel.valor)
+        await this.accountDropdown.selectOption(transactionModel.conta)
         await this.paidStatus.check()
         await this.saveTransactionButton.click()
     }
 
     async createTransaction(transactionModel: TransactionModel, description: string) {
-        await this.transactionDropdown.selectOption(transactionModel.transactionType)
-        await this.transactionDateField.fill(transactionModel.transacttionDate)
-        await this.paymentdateField.fill(transactionModel.paymentDate)
+        await this.transactionDropdown.selectOption(transactionModel.tipo)
+        await this.transactionDateField.fill(transactionModel.data_transacao)
+        await this.paymentdateField.fill(transactionModel.data_pagamento)
         await this.descriptionField.fill(description)
-        await this.InterestedField.fill(transactionModel.interested)
-        await this.amountField.fill(transactionModel.amount)
-        await this.accountDropdown.selectOption('Transaction validate rules')
+        await this.InterestedField.fill(transactionModel.interessado)
+        await this.amountField.fill(transactionModel.valor)
+        await this.accountDropdown.selectOption(transactionModel.conta)
         await this.page.getByRole('radio', { name: transactionModel.status }).check()
         await this.saveTransactionButton.click()
     }
